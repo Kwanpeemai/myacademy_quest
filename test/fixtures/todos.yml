@@ -5,3 +5,7 @@ one:
 two:
   title: "Second todo"
   is_complete: true
+
+three:
+  title: "Third todo"
+  is_complete: false
