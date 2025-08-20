@@ -2,7 +2,3 @@
     <%= render @todo %>
 <% end %>
 <%= turbo_stream.replace "new_todo_form", partial: "form", locals: { todo: Todo.new } %>
-
-<%= turbo_stream.replace "todo_count" do %>
-  <%= tag.span Todo.where(is_complete: false).count, id: "todo_count" %>
-<% end %>

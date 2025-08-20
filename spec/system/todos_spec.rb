@@ -17,7 +17,6 @@ RSpec.describe "Todos", type: :system do
     todo = Todo.order(:created_at).last
 
     expect(page).to have_selector("[data-testid='todo-#{todo.id}-title']", text: "Learn RSpec")
-    expect(page).to have_selector("#todo_count", text: "1")
   end
 
   it "displays completed todos with line-through" do
