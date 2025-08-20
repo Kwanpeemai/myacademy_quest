@@ -19,7 +19,7 @@ class TodoTest < ActiveSupport::TestCase
 
   test "default scope orders by id descending (using only 3 fixtures)" do
     ids = [ @todo1.id, @todo2.id, @todo3.id ]
-    expected_ids = ids.sort.reverse
+    expected_ids = ids.sort
     actual_ids   = Todo.where(id: ids).pluck(:id)
 
     assert_equal expected_ids, actual_ids

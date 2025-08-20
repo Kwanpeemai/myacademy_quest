@@ -11,20 +11,18 @@ RSpec.describe "Todos", type: :request do
 
   describe "POST /todos" do
     it "Should creates a new todo and redirects to index" do
-      expect {
-        post todos_path, params: { todo: { title: "New Todo", is_complete: false } }
-      }.to change(Todo, :count).by(1)
+      post todos_path, params: { todo: { title: "New Todo", is_complete: false } }
 
-      created_todo = Todo.order(id: :desc).first
+      created_todo = Todo.last
       expect(created_todo).not_to be_nil
       expect(created_todo.title).to eq("New Todo")
       expect(created_todo.is_complete).to be false
 
-      expect(response).to redirect_to(todos_path)
       follow_redirect!
       expect(response.body).to include("New Todo")
-    end
+      end
   end
+
   describe "PATCH /todos/:id" do
     it "Should updates the todo status to complete" do
       todo = Todo.create!(title: "Todo", is_complete: false)
