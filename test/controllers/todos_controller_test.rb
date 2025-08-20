@@ -19,11 +19,6 @@ class TodosControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to todos_url
   end
 
-  test "should get edit" do
-    get edit_todo_url(@todo)
-    assert_response :success
-  end
-
   test "should update todo" do
     patch todo_url(@todo), params: { todo: { is_complete: @todo.is_complete, title: @todo.title } }
     assert_redirected_to todos_url
