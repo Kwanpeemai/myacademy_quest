@@ -4,7 +4,7 @@ class TodoTest < ActiveSupport::TestCase
   setup do
     @todo1 = todos(:one)
     @todo2 = todos(:two)
-    @todo2 = todos(:three)
+    @todo3 = todos(:three)
   end
 
   test "should not save todo without title" do
@@ -17,8 +17,11 @@ class TodoTest < ActiveSupport::TestCase
     assert todo.save
   end
 
-  test "default scope orders by id descending" do
-    todos = Todo.all.to_a
-    assert_equal [ @todo3, @todo2, @todo1 ].map(&:id), todos.map(&:id)
+  test "default scope orders by id descending (using only 3 fixtures)" do
+    ids = [ @todo1.id, @todo2.id, @todo3.id ]
+    expected_ids = ids.sort.reverse
+    actual_ids   = Todo.where(id: ids).pluck(:id)
+
+    assert_equal expected_ids, actual_ids
   end
 end
