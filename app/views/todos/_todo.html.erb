@@ -5,7 +5,7 @@
       <%= form.hidden_field :is_complete, value: false %>
       <%= form.check_box :is_complete, { data: { testid: "todo-#{todo.id}-checkbox" }, class: "h-5 w-5 rounded border-gray-300 accent-blue-700", onchange: "this.form.requestSubmit()" }, true, false %>
     <% end %>
-    <span class="flex-1 text-base max-sm:text-sm <%= 'line-through' if done %>" data-testid="todo-<%= todo.id %>-title">
+    <span class="flex-1 text-base max-sm:text-sm break-words whitespace-normal <%= 'line-through' if done %>" data-testid="todo-<%= todo.id %>-title">
       <%= todo.title %>
     </span>
     <%= button_to todo, method: :delete, data: { testid: "todo-#{todo.id}-delete" }, class: "inline-flex h-9 w-9 items-center justify-center rounded-lg text-gray-500 hover:bg-gray-100 hover:text-red-600" do %>
