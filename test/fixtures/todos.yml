@@ -1,0 +1,7 @@
+one:
+  title: "First todo"
+  is_complete: false
+
+two:
+  title: "Second todo"
+  is_complete: true
