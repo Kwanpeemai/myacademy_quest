@@ -1,24 +1,109 @@
-# README
+# My Academy Quest PEEMAI (Cafeine)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+แอปพลิเคชัน Ruby on Rails แบบง่าย ๆ สำหรับจัดการเควส (หรืองาน todo)
+โปรเจกต์นี้ถูกออกแบบมาเพื่อฝึกพัฒนา Rails สมัยใหม่ โดยใช้ TailwindCSS, Turbo/Hotwire และ PostgreSQL
 
-Things you may want to cover:
+---
 
-* Ruby version
+## Table of Contents
 
-* System dependencies
+- [Setup Instructions](#setup-instructions)  
+- [Features](#features)  
+- [Tech Stack](#tech-stack)  
+- [Running Tests](#running-tests)  
 
-* Configuration
+---
 
-* Database creation
+## Setup Instructions
 
-* Database initialization
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/my_academy_quest.git
+cd my_academy_quest
+````
 
-* How to run the test suite
+### 2. Install dependencies
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+bundle install
+```
 
-* Deployment instructions
+### 3. Set up environment variables
 
-* ...
+Create a `.env` file in the project root:
+
+```bash
+touch .env
+```
+
+Add the following:
+
+```
+DB_USERNAME=postgres
+DB_PASSWORD=your_password
+```
+
+### 4. Setup PostgreSQL with Docker
+
+```bash
+docker compose up -d db
+```
+
+### 5. Create and migrate the database
+
+```bash
+rails db:create
+rails db:migrate
+```
+
+### 6. Start the development server
+
+```bash
+bin/dev
+```
+
+Visit the app at: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## Features
+
+* ✅ Quest/Todo management (Create, Delete)
+* ✅ Turbo Stream live updates (auto-refresh list when adding/removing)
+* ✅ TailwindCSS for responsive UI
+
+---
+
+## Tech Stack
+
+* **Ruby on Rails 8**
+* **PostgreSQL** (via Docker)
+* **TailwindCSS** for styling
+* **Hotwire / Turbo** for realtime updates
+* **RSpec + Minitest** for testing
+* **SimpleCov** for coverage reports
+
+---
+
+## Running Tests
+
+### Run all tests with Minitest
+
+```bash
+rails test
+```
+
+### Run RSpec request/system specs
+
+```bash
+bundle exec rspec
+```
+
+### Check coverage with SimpleCov
+
+After running tests, open:
+
+```
+coverage/index.html
+```
+
