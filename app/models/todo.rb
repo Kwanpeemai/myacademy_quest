@@ -1,4 +1,4 @@
 class Todo < ApplicationRecord
   validates :title, presence: true
-  default_scope -> { order(id: :asc) }
+  default_scope -> { order(id: :desc) }
 end
