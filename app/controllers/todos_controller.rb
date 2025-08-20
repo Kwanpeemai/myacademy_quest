@@ -1,14 +1,10 @@
 class TodosController < ApplicationController
-  before_action :set_todo, only: %i[ edit update destroy ]
+  before_action :set_todo, only: %i[ update destroy ]
 
   # GET /todos or /todos.json
   def index
     @todos = Todo.all
     @todo = Todo.new
-  end
-
-  # GET /todos/1/edit
-  def edit
   end
 
   # POST /todos or /todos.json
@@ -51,6 +47,6 @@ class TodosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def todo_params
-      params.expect(todo: [ :title, :is_complete ])
+      params.require(:todo).permit(:title, :is_complete)
     end
 end

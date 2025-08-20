@@ -1,10 +1,26 @@
 <% content_for :title, "Todos" %>
-<h1>Todos</h1>
-<%= turbo_frame_tag "new_todo_form" do %>
-  <%= render "form", todo: @todo %>
-<% end %>
-<div id="todos">
-  <%= turbo_frame_tag "todos" do %>
-    <%= render partial: "todo", collection: @todos, as: :todo %>
-  <% end %>
+<div class="min-h-screen flex flex-col items-center bg-white">
+  <section class="relative w-full">
+    <%= image_tag "banner_desktop.svg", class: "w-full object-cover select-none pointer-events-none" %>
+    <div class="inset-0 flex items-center justify-center">
+      <a href="#todos" class="inline-flex items-center justify-center rounded-2xl bg-blue-700 px-6 py-3 text-white text-xl font-semibold shadow-md hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300">
+        My Brag Document
+      </a>
+    </div>
+  </section>
+  <section class="w-full max-w-2xl px-6 mt-10">
+    <%= turbo_frame_tag "new_todo_form" do %>
+      <%= render "form", todo: @todo %>
+    <% end %>
+  </section>
+  <section class="w-full max-w-2xl px-6 mt-8">
+    <h2 class="mb-3 text-lg font-semibold text-gray-800">
+      Tasks to do - <span id="todo_count"><%= Todo.where(is_complete: false).count %></span>
+    </h2>
+    <div id="todos">
+      <%= turbo_frame_tag "todos" do %>
+        <%= render partial: "todo", collection: @todos, as: :todo %>
+      <% end %>
+    </div>
+  </section>
 </div>

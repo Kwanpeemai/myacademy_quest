@@ -1,3 +1,7 @@
-<%= turbo_stream.replace dom_id(@todo) %>
+<%= turbo_stream.replace dom_id(@todo) do %>
     <%= render @todo %>
+<% end %>
+
+<%= turbo_stream.replace "todo_count" do %>
+  <%= tag.span Todo.where(is_complete: false).count, id: "todo_count" %>
 <% end %>
