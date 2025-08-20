@@ -53,6 +53,10 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem "rspec-rails"
+
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "webdrivers"
 end
 
 group :development do
@@ -62,7 +66,5 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
   gem "simplecov"
 end

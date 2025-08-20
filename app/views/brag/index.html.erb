@@ -1,0 +1,87 @@
+<% content_for :title, "My Brag Document" %>
+<div class="min-h-screen bg-white relative">
+  <div class="absolute top-4 right-4">
+    <%= link_to root_path do %>
+      <%= image_tag "icon/home.svg", class: "w-7 h-7 md:w-8 md:h-8 hover:scale-110 transition-transform" %>
+    <% end %>
+  </div>
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-8 md:py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start md:items-stretch">
+      <div class="order-1 md:order-2 md:h-screen flex items-center justify-center">
+        <%= image_tag "mebrag.svg",
+        alt: "Notebook collage",
+        class: "w-full h-full object-contain rounded-2xl shadow-xl select-none pointer-events-none" %>
+      </div>
+      <div class="order-2 md:order-1">
+        <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-black mb-6 md:mb-8">
+          PEEMAI 2025
+        </h1>
+        <div class="mb-6 md:mb-8">
+          <h2 class="flex items-center gap-2 text-xl md:text-2xl font-bold mb-3">
+            <%= image_tag "icon/target.svg", class: "w-6 h-6 md:w-7 md:h-7" %>
+            GOALS
+          </h2>
+          <ul class="list-disc space-y-1 pl-6 text-sm md:text-base leading-relaxed">
+            <li>เพิ่มทักษะเกี่ยวกับ <span class="font-semibold">programming languages</span></li>
+            <li>Frontend Skills: React, JavaScript, Angular, CSS, Bootstrap</li>
+            <li>Backend Skills: JAVA, Golang, TypeScript</li>
+            <li>Ruby on Rails ✨</li>
+            <li>CI/CD, Pipeline ; DevOps</li>
+            <li>Good in English (TOEIC 550+, write, read)</li>
+            <li>Strong communication and interpersonal skills</li>
+            <li>Healthy and Exercise</li>
+          </ul>
+        </div>
+        <div class="space-y-5 md:space-y-6">
+          <h2 class="flex items-center gap-2 text-xl md:text-2xl font-bold mb-3">
+            <%= image_tag "icon/pen.svg", class: "w-6 h-6 md:w-7 md:h-7" %>
+            ACTIONS
+          </h2>
+          <div>
+            <h3 class="flex items-center gap-2 font-semibold mb-2">
+              Self
+              <%= image_tag "icon/self.svg", class: "w-6 h-6 md:w-7 md:h-7" %>
+            </h3>
+            <ul class="list-disc space-y-1 pl-6 text-sm md:text-base leading-relaxed">
+              <li>ฝึกและเรียนภาษาอังกฤษเพิ่มวันละ 1–2 ชั่วโมง และนำไปใช้</li>
+              <li>ทบทวนการใช้ CSS ในเว็บ W3School อย่างน้อยวันละ 5 หัวข้อ จบครบและคล่อง</li>
+              <li>ออกกำลังกายวันละ 30 นาที</li>
+              <li>ศึกษาในด้าน DevOps ให้เชี่ยวชาญ</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="flex items-center gap-2 font-semibold mb-2">
+              Team
+              <%= image_tag "icon/team.svg", class: "w-6 h-6 md:w-7 md:h-7" %>
+            </h3>
+            <ul class="list-disc space-y-1 pl-6 text-sm md:text-base leading-relaxed">
+              <li>ช่วยพาทีมฝึกสหกิจให้งาน ให้จบครบ 6 เดือน</li>
+              <li>ช่วยกันสอน code ที่ได้เรียนรู้มา</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="flex items-center gap-2 font-semibold mb-2">
+              ODT
+              <%= image_tag "icon/odt.svg", class: "w-6 h-6 md:w-7 md:h-7" %>
+            </h3>
+            <ul class="list-disc space-y-1 pl-6 text-sm md:text-base leading-relaxed">
+              <li>ตั้งใจทำทุก Quest ที่ได้รับมอบหมาย เพื่อเข้าไปเป็นส่วนหนึ่งของ ODT และเติบโตไปพร้อม ๆ กัน</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="flex items-center gap-2 font-semibold mb-2">
+              Client
+              <%= image_tag "icon/client.svg", class: "w-6 h-6 md:w-7 md:h-7" %>
+            </h3>
+            <ul class="list-disc space-y-1 pl-6 text-sm md:text-base leading-relaxed">
+              <li>ตั้งใจฟังและเรียนรู้จาก feedback ของลูกค้า</li>
+              <li>รายงานความคืบหน้าให้พี่ ๆ ทราบอย่างสม่ำเสมอ</li>
+              <li>ถ้ามีปัญหาหรือข้อสงสัย จะรีบถาม/สื่อสาร ไม่เก็บไว้คนเดียว</li>
+              <li>ส่งงานที่ตรวจสอบแล้ว และพยายามรักษาคุณภาพงานให้ดีที่สุด</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

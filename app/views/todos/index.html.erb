@@ -1,11 +1,10 @@
 <% content_for :title, "Todos" %>
 <div class="min-h-screen flex flex-col items-center bg-white">
   <section class="relative w-full">
-    <%= image_tag "banner_desktop.svg", class: "w-full object-cover select-none pointer-events-none" %>
+    <%= image_tag "banner_desktop.svg", class: "hidden md:block w-full object-cover select-none pointer-events-none" %>
+    <%= image_tag "banner_mobile.svg", class: "block md:hidden size-80 object-cover mx-auto select-none pointer-events-none" %>
     <div class="inset-0 flex items-center justify-center">
-      <a href="#todos" class="inline-flex items-center justify-center rounded-2xl bg-blue-700 px-6 py-3 text-white text-xl font-semibold shadow-md hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300">
-        My Brag Document
-      </a>
+      <%= link_to "My Brag Document", brag_path, class: "inline-flex items-center justify-center rounded-2xl max-sm:rounded-xl bg-blue-700 px-6 py-3 m-3 text-white text-xl font-semibold shadow-md hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 max-sm:text-base" %>
     </div>
   </section>
   <section class="w-full max-w-2xl px-6 mt-10">
@@ -14,7 +13,7 @@
     <% end %>
   </section>
   <section class="w-full max-w-2xl px-6 mt-8">
-    <h2 class="mb-3 text-lg font-semibold text-gray-800">
+    <h2 class="mb-3 text-lg max-sm:text-base font-semibold text-gray-800">
       Tasks to do - <span id="todo_count"><%= Todo.where(is_complete: false).count %></span>
     </h2>
     <div id="todos">
